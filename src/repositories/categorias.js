@@ -9,6 +9,7 @@ function getAllWithVideos() {
         const resposta  = await respostaDoServidor.json();  
         return resposta;
       }
+      
       throw new Error('Não foi possível pegar os dados :(');
     });
 }

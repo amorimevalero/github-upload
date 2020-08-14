@@ -10,11 +10,10 @@ const Main = styled.main`
   padding-top: 50px;
   padding-left: 5%;
   padding-right: 5%;
-  ${ ({ paddingAll}) => css`
+  ${ ({ paddingAll }) => css`
     padding: ${paddingAll};
   `}
 `;
-
 
 function PageDefault({ children, paddingAll }) {
   return (
