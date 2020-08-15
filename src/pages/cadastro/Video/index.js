@@ -10,6 +10,7 @@ import categoriasRepository from '../../../repositories/categorias';
 function CadastroVideo() {
   const history = useHistory();
   const [categorias, setCategorias] = useState([]);
+  const categoryTitles = categorias.map(({ titulo }) => titulo);
   const{handleChange, values} = useForm({
     titulo: 'Video padrão',
     url:'https://mariosouto.com/flappy-bird-devsoutinho/',
@@ -72,6 +73,7 @@ function CadastroVideo() {
           name="categoria"
           value={values.categoria}
           onChange={handleChange}
+          suggestions={categoryTitles}
         />
       
         <Button type="submit">
@@ -79,9 +81,6 @@ function CadastroVideo() {
         </Button>
       
       </form>
-
-      
-
 
       <Link to="/cadastro/categoria">
         Cadastrar Categoria

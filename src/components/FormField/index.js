@@ -90,8 +90,8 @@ function FormField({
           value={value}
           name={name}
           onChange={onChange}
-          autoComplete="off"
-          List={`suggestionFor_${fieldId}`}
+          autoComplete={hasSuggestions ? 'off' : 'on'}
+          List={hasSuggestions ? `suggestionFor_${fieldId}` : 'on'}
         />
         <Label.Text>
           {label}
@@ -102,7 +102,7 @@ function FormField({
               {
                 suggestions.map((suggestion) => (
                   // eslint-disable-next-line react/jsx-key
-                  <option value={suggestion}>
+                  <option value={suggestion} key={`suggestionFor_${fieldId}_option${suggestion}`}>
                     {suggestion}
                   </option>
                  ))
@@ -119,10 +119,7 @@ FormField.defaultProps = {
   type: 'text',
   value: '',
   onChange: () => {},
-  suggestions: [
-    'Front End',
-    'Back End',
-  ],
+  suggestions: [],
 };
 
 FormField.propTypes = {
@@ -134,4 +131,4 @@ FormField.propTypes = {
   suggestions: PropTypes.arrayOf(PropTypes.string),
 };
 
-export default FormField;
+export default FormField; 
