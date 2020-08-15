@@ -70,32 +70,59 @@ const Input = styled.input`
 `;
 
 function FormField({
-  label, type, name, value, onChange,
+  label, type, name, value, onChange, suggestions,
 }) {
+  const fieldId = `id_${name}`;
   const isTypeTextArea = type === 'textarea';
   const tag = isTypeTextArea ? 'textarea' : 'input';
 
+  // const hasValue = Boolean(value.length);
+  const hasSuggestions = Boolean(suggestions.length);
+
   return (
     <FormFieldWrapper>
-      <Label>
+      <Label 
+        htmlFor={fieldId}
+      >
         <Input
           as={tag}
           type={type}
           value={value}
           name={name}
           onChange={onChange}
+          autoComplete="off"
+          List={`suggestionFor_${fieldId}`}
         />
         <Label.Text>
           {label}
         </Label.Text>
+        {
+          hasSuggestions && (
+            <datalist id={`suggestionFor_${fieldId}`}>
+              {
+                suggestions.map((suggestion) => (
+                  // eslint-disable-next-line react/jsx-key
+                  <option value={suggestion}>
+                    {suggestion}
+                  </option>
+                 ))
+              }
+            </datalist>
+          )
+        }
       </Label>
     </FormFieldWrapper>
   );
 }
 
 FormField.defaultProps = {
-  type: 'text',
-  value: '',
+  type: 'text',
+  value: '',
+  onChange: () => {},
+  suggestions: [
+    'Front End',
+    'Back End',
+  ],
 };
 
 FormField.propTypes = {
@@ -104,6 +131,7 @@ FormField.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  suggestions: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default FormField;
