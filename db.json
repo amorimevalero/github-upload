@@ -324,6 +324,50 @@
       "url": "https://mariosouto.com/flappy-bird-devsoutinho/",
       "categoriaId": 1,
       "id": 70
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://mariosouto.com/flappy-bird-devsoutinho/",
+      "categoriaId": 1,
+      "id": 71
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://mariosouto.com/flappy-bird-devsoutinho/",
+      "categoriaId": 1,
+      "id": 72
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://mariosouto.com/flappy-bird-devsoutinho/",
+      "categoriaId": 1,
+      "id": 73
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://mariosouto.com/flappy-bird-devsoutinho/",
+      "categoriaId": 1,
+      "id": 74
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://mariosouto.com/flappy-bird-devsoutinho/",
+      "categoriaId": 1,
+      "id": 75
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://mariosouto.com/flappy-bird-devsoutinho/",
+      "categoriaId": {
+        "id": 1,
+        "titulo": "Front End",
+        "cor": "#6BD1FF",
+        "link_extra": {
+          "text": "Formação de Front End na Alura",
+          "url": "https://www.alura.com.br/cursos-online-front-end"
+        }
+      },
+      "id": 76
     }
   ]
 }

@@ -14,7 +14,7 @@ function CadastroVideo() {
   const{handleChange, values} = useForm({
     titulo: 'Video padrão',
     url:'https://mariosouto.com/flappy-bird-devsoutinho/',
-    categoria: 'Front Emd',    
+    categoria: 'Front End',    
   });
 
   useEffect( () => {
@@ -45,11 +45,11 @@ function CadastroVideo() {
         videosRepository.create({
           titulo: values.titulo,
           url: values.url,
-          categoriaId: 1,
+          categoriaId: categoriaEscolhida,
         })
          .then(() => {
 
-           console.log('CAdastrado com sucesso !!!') 
+           console.log('Cadastrado com sucesso !!!') 
            history.push('/');
          });
       }}
